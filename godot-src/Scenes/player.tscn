@@ -1,12 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://byp4vefv8is41"]
+[gd_scene load_steps=4 format=3 uid="uid://drai4uf0cijc0"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kwu56"]
 [ext_resource type="Texture2D" uid="uid://dh5xmcl5pavlx" path="res://Images/clown.png" id="2_f4t4b"]
 
-[node name="Player" type="Node2D"]
-position = Vector2(2.08165e-12, 2.08165e-12)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3l85"]
+radius = 27.9466
+height = 55.8932
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_kwu56")
 
 [node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -47)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("2_f4t4b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.76902e-21, -2.08165e-12)
+rotation = 0.0356267
+shape = SubResource("CapsuleShape2D_a3l85")

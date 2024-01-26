@@ -1,13 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bd2nwu315k2ta"]
 
-[ext_resource type="PackedScene" uid="uid://dtcrrk4hklmiy" path="res://Scenes/enemy.tscn" id="1_58onc"]
-[ext_resource type="PackedScene" uid="uid://byp4vefv8is41" path="res://Scenes/player.tscn" id="1_d3vag"]
+[ext_resource type="PackedScene" uid="uid://cuh34jqcntpog" path="res://Scenes/enemy.tscn" id="1_58onc"]
+[ext_resource type="PackedScene" uid="uid://drai4uf0cijc0" path="res://Scenes/player.tscn" id="1_d3vag"]
 
 [node name="Level0" type="Node2D"]
 
-[node name="Enemy" parent="." instance=ExtResource("1_58onc")]
+[node name="Characters" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Enemy" parent="Characters" instance=ExtResource("1_58onc")]
 position = Vector2(699, 241)
 
-[node name="Player" parent="." instance=ExtResource("1_d3vag")]
+[node name="Player" parent="Characters" instance=ExtResource("1_d3vag")]
 position = Vector2(100, 100)
-speed = 300.0

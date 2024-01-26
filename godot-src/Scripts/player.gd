@@ -1,6 +1,6 @@
-extends Node2D
+extends CharacterBody2D
 
-@export var speed : float = 3
+@export var speed : float = 30000
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -23,7 +23,7 @@ func _movement_dir():
 		input_y
 	).normalized()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	position += _movement_dir()*speed*delta
+func _physics_process(delta):
+	velocity = _movement_dir()*speed*delta
+	move_and_slide()
 	
