@@ -14,8 +14,20 @@ func _update_position():
 	position = follow_target.position +  Vector2(0,offset.y) + \
 		hammer_dir * offset.x
 
+func _is_right_of_target():
+	return follow_target.position.x <= position.x
+
+func _rotate_if_attacking():
+	if Input.is_action_pressed("attack"):
+		if _is_right_of_target():
+			sprite.rotation_degrees = 30
+		else:
+			sprite.rotation_degrees = -30
+	else:
+		sprite.rotation_degrees = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	_update_position()
-	sprite.flip_h = follow_target.position.x <= position.x
+	sprite.flip_h = _is_right_of_target()
+	_rotate_if_attacking()
