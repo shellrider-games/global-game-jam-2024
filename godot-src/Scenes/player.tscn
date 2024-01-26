@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://drai4uf0cijc0"]
+
+[ext_resource type="Texture2D" uid="uid://15wx4tpj800h" path="res://Images/circle.png" id="1_4liyo"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_kwu56"]
+
+[node name="Player" type="Node2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+script = ExtResource("1_kwu56")
+
+[node name="Circle" type="Sprite2D" parent="."]
+texture = ExtResource("1_4liyo")

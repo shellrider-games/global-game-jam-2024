@@ -1,11 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bd2nwu315k2ta"]
 
-[ext_resource type="Texture2D" uid="uid://15wx4tpj800h" path="res://Images/circle.png" id="1_cux5t"]
+[ext_resource type="PackedScene" uid="uid://drai4uf0cijc0" path="res://Scenes/player.tscn" id="1_d3vag"]
 
 [node name="Level0" type="Node2D"]
 
-[node name="Player" type="Node2D" parent="."]
-position = Vector2(250, 250)
-
-[node name="Circle" type="Sprite2D" parent="Player"]
-texture = ExtResource("1_cux5t")
+[node name="Player" parent="." instance=ExtResource("1_d3vag")]
+position = Vector2(100, 100)
