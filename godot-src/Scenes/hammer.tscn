@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b8plr11lukv8y"]
+[gd_scene load_steps=3 format=3 uid="uid://kfcmwidkt3i7"]
 
 [ext_resource type="Script" path="res://Scripts/hammer.gd" id="1_4841u"]
 [ext_resource type="Texture2D" uid="uid://d2lkwalqx0t6a" path="res://Images/hammer.png" id="1_vt82a"]
 
-[node name="Hammer" type="Node2D"]
+[node name="Hammer" type="Node2D" node_paths=PackedStringArray("sprite")]
+position = Vector2(-2, 0)
 script = ExtResource("1_4841u")
+sprite = NodePath("Sprite2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-16, -28)
+position = Vector2(2.08165e-12, -45)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("1_vt82a")
