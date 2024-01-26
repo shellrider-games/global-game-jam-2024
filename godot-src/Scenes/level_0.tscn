@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=4 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="PackedScene" uid="uid://dtcrrk4hklmiy" path="res://Scenes/enemy.tscn" id="1_58onc"]
 [ext_resource type="PackedScene" uid="uid://byp4vefv8is41" path="res://Scenes/player.tscn" id="1_d3vag"]
+[ext_resource type="PackedScene" uid="uid://b8plr11lukv8y" path="res://Scenes/hammer.tscn" id="3_h5yrq"]
 
 [node name="Level0" type="Node2D"]
 
@@ -16,3 +17,8 @@ position = Vector2(1039, 816)
 
 [node name="Player" parent="Characters" instance=ExtResource("1_d3vag")]
 position = Vector2(945, 544)
+
+[node name="Hammer" parent="Characters" node_paths=PackedStringArray("follow_target") instance=ExtResource("3_h5yrq")]
+position = Vector2(475, 669)
+follow_target = NodePath("../Player")
+offset = Vector2(-65, -20)
