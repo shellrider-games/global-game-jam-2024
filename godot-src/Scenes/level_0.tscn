@@ -20,9 +20,9 @@ y_sort_enabled = true
 position = Vector2(1208, 559)
 leader = NodePath("../Player")
 
-[node name="Enemy" parent="Characters" node_paths=PackedStringArray("player") instance=ExtResource("1_58onc")]
+[node name="Enemy" parent="Characters" instance=ExtResource("1_58onc")]
 position = Vector2(475, 432)
-player = NodePath("../Player")
+move_epsilon = 1.0
 
 [node name="Player" parent="Characters" instance=ExtResource("1_d3vag")]
 position = Vector2(945, 544)
@@ -31,3 +31,5 @@ position = Vector2(945, 544)
 position = Vector2(475, 669)
 follow_target = NodePath("../Player")
 offset = Vector2(-65, -17)
+
+[node name="Bullets" type="Node2D" parent="."]
