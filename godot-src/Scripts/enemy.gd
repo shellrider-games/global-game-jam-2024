@@ -21,6 +21,9 @@ func knockback_from(pos : Vector2) -> void:
     var direction = (position - pos).normalized()
     velocity = direction * knockback_amount
 
+func bullet_hit():
+    pass
+
 func _ready():
     target_manager = get_tree().root.find_child(
         "TargetManager",

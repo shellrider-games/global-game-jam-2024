@@ -4,9 +4,9 @@ class_name Player
 
 @export var speed : float = 30000
 @onready var animations = $AnimationPlayer
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+
+func bullet_hit():
+	print("Ouch!!!!")
 
 func _update_animation():
 	var direction = "_down"
@@ -14,10 +14,8 @@ func _update_animation():
 	if velocity.length() == 0: direction = "_idle"
 	elif velocity.y > 0: direction = "_down"
 	elif velocity.y < 0: direction = "_up"
-	
-	print(velocity)
+
 	animations.play("walk" + direction)
-	print("walk" + direction)
 
 func _movement_dir():
 	var input_x = 0
@@ -37,7 +35,7 @@ func _movement_dir():
 		input_y
 	).normalized()
 	
-func _process(delta):
+func _process(_delta):
 	_update_animation()
 
 func _physics_process(delta):

@@ -11,6 +11,7 @@ radius = 35.0
 height = 80.0
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("tag_indicator", "bullet_spawn")]
+collision_layer = 3
 script = ExtResource("1_kph8y")
 bullet_scene = ExtResource("2_2bt4n")
 after_conversion_scene = ExtResource("2_wwwlh")
