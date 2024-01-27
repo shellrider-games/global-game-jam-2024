@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuh34jqcntpog"]
+[gd_scene load_steps=7 format=3 uid="uid://cuh34jqcntpog"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_kph8y"]
 [ext_resource type="Texture2D" uid="uid://d2vm4lqvsupg5" path="res://Images/enemy.png" id="1_mysvk"]
+[ext_resource type="PackedScene" uid="uid://ch6e07x20jya" path="res://Scenes/cry_bullet.tscn" id="2_2bt4n"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="2_wwwlh"]
 [ext_resource type="PackedScene" uid="uid://bfaig6xyvjumh" path="res://Scenes/tag_indicator.tscn" id="4_lviyu"]
 
@@ -9,10 +10,12 @@
 radius = 35.0
 height = 80.0
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("tag_indicator")]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("tag_indicator", "bullet_spawn")]
 script = ExtResource("1_kph8y")
+bullet_scene = ExtResource("2_2bt4n")
 after_conversion_scene = ExtResource("2_wwwlh")
 tag_indicator = NodePath("TagIndicator")
+bullet_spawn = NodePath("BulletSpawn")
 knockback_amount = 1500.0
 friction = 5.0
 
@@ -27,4 +30,8 @@ texture = ExtResource("1_mysvk")
 
 [node name="TagIndicator" parent="." instance=ExtResource("4_lviyu")]
 visible = false
+z_index = 1
 position = Vector2(0, -130)
+
+[node name="BulletSpawn" type="Node2D" parent="."]
+position = Vector2(48, -39)
