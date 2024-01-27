@@ -9,7 +9,7 @@
 [node name="Level0" type="Node2D"]
 
 [node name="TargetManager" type="Node2D" parent="."]
-position = Vector2(13, -23)
+position = Vector2(2.08165e-12, 2.08165e-12)
 script = ExtResource("1_7r70x")
 target_duration = 3.0
 
