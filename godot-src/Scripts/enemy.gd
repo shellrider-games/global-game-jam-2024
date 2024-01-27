@@ -23,16 +23,16 @@ func knockback_from(pos : Vector2) -> void:
 	velocity = direction * knockback_amount
 
 func _convert_to_minion():
-    var noob = after_conversion_scene.instantiate()
-    noob.set_deferred("position", position)
-    noob.set_deferred("leader", player)
-    add_sibling(noob)
-    queue_free()
+	var noob = after_conversion_scene.instantiate()
+	noob.set_deferred("position", position)
+	noob.set_deferred("leader", player)
+	add_sibling(noob)
+	queue_free()
 
 func bullet_hit():
 	health -= 1
 	if health <= 0:
-		pass
+		_convert_to_minion()
 
 func _ready():
 	target_manager = get_tree().root.find_child(
