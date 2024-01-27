@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://4027gahk8wna"]
+
+[node name="TagIndicator" type="Node2D"]
