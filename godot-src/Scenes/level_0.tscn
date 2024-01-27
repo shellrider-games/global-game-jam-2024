@@ -1,20 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=6 format=3 uid="uid://bd2nwu315k2ta"]
 
+[ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://cuh34jqcntpog" path="res://Scenes/enemy.tscn" id="1_58onc"]
+[ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
 [ext_resource type="PackedScene" uid="uid://drai4uf0cijc0" path="res://Scenes/player.tscn" id="1_d3vag"]
 [ext_resource type="PackedScene" uid="uid://kfcmwidkt3i7" path="res://Scenes/hammer.tscn" id="3_h5yrq"]
 
 [node name="Level0" type="Node2D"]
 
+[node name="TargetManager" type="Node2D" parent="."]
+script = ExtResource("1_7r70x")
+
 [node name="Characters" type="Node2D" parent="."]
 y_sort_enabled = true
 
+[node name="Minion" parent="Characters" node_paths=PackedStringArray("leader") instance=ExtResource("1_aye6v")]
+position = Vector2(1208, 559)
+leader = NodePath("../Player")
+
 [node name="Enemy" parent="Characters" node_paths=PackedStringArray("player") instance=ExtResource("1_58onc")]
 position = Vector2(699, 241)
-player = NodePath("../Player")
-
-[node name="Enemy2" parent="Characters" node_paths=PackedStringArray("player") instance=ExtResource("1_58onc")]
-position = Vector2(1039, 816)
 player = NodePath("../Player")
 
 [node name="Player" parent="Characters" instance=ExtResource("1_d3vag")]
