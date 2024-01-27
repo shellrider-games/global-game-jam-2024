@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://kfcmwidkt3i7"]
+[gd_scene load_steps=4 format=3 uid="uid://kfcmwidkt3i7"]
 
 [ext_resource type="Script" path="res://Scripts/hammer.gd" id="1_4841u"]
 [ext_resource type="Texture2D" uid="uid://d2lkwalqx0t6a" path="res://Images/hammer.png" id="1_vt82a"]
+[ext_resource type="PackedScene" uid="uid://b3vldlevksylp" path="res://Scenes/attack.tscn" id="2_ta4ba"]
 
 [node name="Hammer" type="Node2D" node_paths=PackedStringArray("sprite")]
 position = Vector2(-2, 0)
 script = ExtResource("1_4841u")
 sprite = NodePath("Sprite2D")
+attack_scene = ExtResource("2_ta4ba")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, -45)

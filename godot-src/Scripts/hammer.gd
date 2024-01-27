@@ -4,6 +4,8 @@ extends Node2D
 @export var offset : Vector2
 @export var sprite : Sprite2D
 
+@export var attack_scene : Resource
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -26,8 +28,15 @@ func _rotate_if_attacking():
 	else:
 		sprite.rotation_degrees = 0
 
+func _spawn_attack_if_just_clicked():
+	if Input.is_action_just_pressed("attack"):
+		var instance = attack_scene.instantiate()
+		instance.position = position
+		add_sibling(instance)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	_update_position()
 	sprite.flip_h = _is_right_of_target()
+	_spawn_attack_if_just_clicked()
 	_rotate_if_attacking()

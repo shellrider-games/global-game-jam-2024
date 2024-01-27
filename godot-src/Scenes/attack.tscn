@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3vldlevksylp"]
+
+[ext_resource type="Script" path="res://Scripts/attack.gd" id="1_6rena"]
+[ext_resource type="Texture2D" uid="uid://15wx4tpj800h" path="res://Images/circle.png" id="1_nyx2h"]
+
+[node name="Attack" type="Node2D"]
+script = ExtResource("1_6rena")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nyx2h")
+offset = Vector2(2.08165e-12, -32)
