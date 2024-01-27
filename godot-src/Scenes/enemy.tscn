@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuh34jqcntpog"]
+[gd_scene load_steps=5 format=3 uid="uid://cuh34jqcntpog"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_kph8y"]
 [ext_resource type="Texture2D" uid="uid://d2vm4lqvsupg5" path="res://Images/enemy.png" id="1_mysvk"]
+[ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="2_qbbgs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
 radius = 35.0
@@ -9,6 +10,7 @@ height = 80.0
 
 [node name="Enemy" type="StaticBody2D"]
 script = ExtResource("1_kph8y")
+after_conversion_scene = ExtResource("2_qbbgs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
