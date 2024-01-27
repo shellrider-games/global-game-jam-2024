@@ -16,6 +16,7 @@ var target_manager : TargetManager
 var is_angry : bool
 var shoot_cooldown : float
 var player : Player
+var health : int = 5
 
 func knockback_from(pos : Vector2) -> void:
     var direction = (position - pos).normalized()
@@ -30,7 +31,9 @@ func _convert_to_minion():
     queue_free()
 
 func bullet_hit():
-    pass
+    health -= 1
+    if health <= 0:
+        _convert_to_minion()
 
 func _ready():
     target_manager = get_tree().root.find_child(
