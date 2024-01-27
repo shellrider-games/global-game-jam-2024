@@ -21,6 +21,13 @@ func knockback_from(pos : Vector2) -> void:
     var direction = (position - pos).normalized()
     velocity = direction * knockback_amount
 
+func _convert_to_minion():
+    var noob = after_conversion_scene.instantiate()
+    noob.set_deferred("position", position)
+    noob.set_deferred("leader", player)
+    add_sibling(noob)
+    queue_free()
+
 func bullet_hit():
     pass
 
