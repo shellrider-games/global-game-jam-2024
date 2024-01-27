@@ -7,8 +7,7 @@ class_name Minion
 @export var min_distance_to_leader : float
 @export var epsilon : float
 @export var sprite : Sprite2D
-
-var leader : Player
+@export var leader : Player
 
 func _process(delta):
     if leader and sprite:
