@@ -18,5 +18,4 @@ func _ready():
 
 
 func take_damage():
-    tag_indicator.visible = true
     target_manager.add_target(self)

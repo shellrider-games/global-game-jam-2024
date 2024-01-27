@@ -11,6 +11,7 @@
 [node name="TargetManager" type="Node2D" parent="."]
 position = Vector2(13, -23)
 script = ExtResource("1_7r70x")
+target_duration = 3.0
 
 [node name="Characters" type="Node2D" parent="."]
 y_sort_enabled = true

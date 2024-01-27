@@ -9,6 +9,8 @@ class_name Minion
 @export var sprite : Sprite2D
 @export var leader : Player
 
+var target_manager : TargetManager
+
 func _process(delta):
     if leader and sprite:
         sprite.flip_h = (leader.position - position).x < 0
