@@ -9,6 +9,7 @@ radius = 35.0
 height = 80.0
 
 [node name="Minion" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "bullet_spawn")]
+collision_layer = 5
 script = ExtResource("1_7ge8p")
 speed = 30000.0
 max_distance_to_leader = 300.0
