@@ -1,3 +1,9 @@
-[gd_scene format=3 uid="uid://4027gahk8wna"]
+[gd_scene load_steps=2 format=3 uid="uid://4027gahk8wna"]
+
+[ext_resource type="Texture2D" uid="uid://q34jyeqriqlu" path="res://Images/tag_indicator_mad.png" id="1_43yfw"]
 
 [node name="TagIndicator" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.455, 0.455)
+texture = ExtResource("1_43yfw")
