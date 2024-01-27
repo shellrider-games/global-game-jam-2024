@@ -9,11 +9,13 @@
 [node name="Characters" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="Enemy" parent="Characters" instance=ExtResource("1_58onc")]
+[node name="Enemy" parent="Characters" node_paths=PackedStringArray("player") instance=ExtResource("1_58onc")]
 position = Vector2(699, 241)
+player = NodePath("../Player")
 
-[node name="Enemy2" parent="Characters" instance=ExtResource("1_58onc")]
+[node name="Enemy2" parent="Characters" node_paths=PackedStringArray("player") instance=ExtResource("1_58onc")]
 position = Vector2(1039, 816)
+player = NodePath("../Player")
 
 [node name="Player" parent="Characters" instance=ExtResource("1_d3vag")]
 position = Vector2(945, 544)
