@@ -11,6 +11,7 @@
 [node name="TargetManager" type="Node2D" parent="."]
 position = Vector2(13, -23)
 script = ExtResource("1_7r70x")
+target_duration = 3.0
 
 [node name="Characters" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -19,8 +20,9 @@ y_sort_enabled = true
 position = Vector2(1208, 559)
 leader = NodePath("../Player")
 
-[node name="Enemy" parent="Characters" instance=ExtResource("1_58onc")]
-position = Vector2(699, 241)
+[node name="Enemy" parent="Characters" node_paths=PackedStringArray("player") instance=ExtResource("1_58onc")]
+position = Vector2(475, 432)
+player = NodePath("../Player")
 
 [node name="Player" parent="Characters" instance=ExtResource("1_d3vag")]
 position = Vector2(945, 544)

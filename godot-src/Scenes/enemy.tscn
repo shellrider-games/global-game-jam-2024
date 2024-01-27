@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuh34jqcntpog"]
+[gd_scene load_steps=6 format=3 uid="uid://cuh34jqcntpog"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_kph8y"]
 [ext_resource type="Texture2D" uid="uid://d2vm4lqvsupg5" path="res://Images/enemy.png" id="1_mysvk"]
-[ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="2_qbbgs"]
+[ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="2_wwwlh"]
+[ext_resource type="PackedScene" uid="uid://bfaig6xyvjumh" path="res://Scenes/tag_indicator.tscn" id="4_lviyu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
 radius = 35.0
 height = 80.0
 
-[node name="Enemy" type="StaticBody2D"]
+[node name="Enemy" type="StaticBody2D" node_paths=PackedStringArray("tag_indicator")]
 script = ExtResource("1_kph8y")
-after_conversion_scene = ExtResource("2_qbbgs")
+after_conversion_scene = ExtResource("2_wwwlh")
+tag_indicator = NodePath("TagIndicator")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -20,3 +22,7 @@ shape = SubResource("CapsuleShape2D_1xk3u")
 position = Vector2(2.08165e-12, -41)
 scale = Vector2(0.17, 0.17)
 texture = ExtResource("1_mysvk")
+
+[node name="TagIndicator" parent="." instance=ExtResource("4_lviyu")]
+visible = false
+position = Vector2(0, -130)
