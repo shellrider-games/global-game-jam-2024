@@ -26,6 +26,7 @@ func _convert_to_minion():
     noob.set_deferred("position", position)
     noob.set_deferred("leader", player)
     add_sibling(noob)
+    target_manager.remove_target(self)
     queue_free()
 
 func bullet_hit():

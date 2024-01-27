@@ -6,6 +6,8 @@ class_name TargetManager
 
 @onready var targets = {}
 
+func remove_target(target: Node2D) -> void:
+	targets.erase(target)
 
 func add_target(target : Node2D) -> void :
 	targets[target] = target_duration
