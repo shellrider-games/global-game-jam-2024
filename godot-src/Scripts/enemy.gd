@@ -4,7 +4,6 @@ extends CharacterBody2D
 
 @export var bullet_scene : Resource
 @export var after_conversion_scene : Resource
-@export var player : Player
 @export var tag_indicator : Node2D
 @export var bullet_spawn : Node2D
 
@@ -16,6 +15,7 @@ extends CharacterBody2D
 var target_manager : TargetManager
 var is_angry : bool
 var shoot_cooldown : float
+var player : Player
 
 func knockback_from(pos : Vector2) -> void:
     var direction = (position - pos).normalized()
@@ -24,6 +24,11 @@ func knockback_from(pos : Vector2) -> void:
 func _ready():
     target_manager = get_tree().root.find_child(
         "TargetManager",
+        true,
+        false
+    )
+    player = get_tree().root.find_child(
+        "Player",
         true,
         false
     )
@@ -42,6 +47,8 @@ func _spawn_bullet():
     )
     var noob = bullet_scene.instantiate()
     noob.global_position = bullet_spawn.global_position
+    noob.direction = (player.global_position - bullet_spawn.global_position) \
+        .normalized()
     bullets.add_child(noob)
 
 

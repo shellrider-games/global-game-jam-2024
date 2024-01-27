@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://ch6e07x20jya"]
+[gd_scene load_steps=4 format=3 uid="uid://ch6e07x20jya"]
 
+[ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_126rw"]
 [ext_resource type="Texture2D" uid="uid://crdd5ka2m4hhj" path="res://Images/bullet_cry.png" id="1_uu624"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4xryo"]
 
 [node name="CryBullet" type="Node2D"]
+script = ExtResource("1_126rw")
+speed = 400.0
+max_distance_to_player = 5000.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
