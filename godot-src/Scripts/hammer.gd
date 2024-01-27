@@ -27,7 +27,7 @@ func _rotate_if_attacking():
 		sprite.rotation_degrees = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	_update_position()
 	sprite.flip_h = _is_right_of_target()
 	_rotate_if_attacking()
