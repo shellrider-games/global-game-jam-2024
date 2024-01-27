@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://creqw7wprhkww"]
+[gd_scene load_steps=3 format=3 uid="uid://creqw7wprhkww"]
+
+[ext_resource type="Texture2D" uid="uid://dwospc7n3y8a" path="res://Images/bullet_smile.png" id="1_7e5tv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_unj52"]
 
 [node name="SmileBullet" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7e5tv")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_unj52")

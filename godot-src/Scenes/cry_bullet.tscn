@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://jcu73cmjchgk"]
+[gd_scene load_steps=3 format=3 uid="uid://jcu73cmjchgk"]
+
+[ext_resource type="Texture2D" uid="uid://crdd5ka2m4hhj" path="res://Images/bullet_cry.png" id="1_uu624"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4xryo"]
 
 [node name="CryBullet" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_uu624")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_4xryo")
