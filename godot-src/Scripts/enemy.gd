@@ -6,6 +6,6 @@ extends StaticBody2D
 
 func take_damage():
     var converted = after_conversion_scene.instantiate()
-    converted.position = position
+    converted.set_deferred("position", position)
     add_sibling(converted)
     queue_free()
