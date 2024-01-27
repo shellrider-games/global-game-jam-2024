@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch6e07x20jya"]
+[gd_scene load_steps=4 format=3 uid="uid://jcu73cmjchgk"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_126rw"]
 [ext_resource type="Texture2D" uid="uid://crdd5ka2m4hhj" path="res://Images/bullet_cry.png" id="1_uu624"]
@@ -13,6 +13,7 @@ collision_area = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(3.5, 3.5)
 texture = ExtResource("1_uu624")
 
 [node name="Area2D" type="Area2D" parent="."]
