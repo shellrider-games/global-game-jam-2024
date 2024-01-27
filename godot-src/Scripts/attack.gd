@@ -7,9 +7,12 @@ class_name Attack
 var already_attacked := []
 
 func _on_body_entered(body : Node2D):
-    if body.has_method("take_damage") and body not in already_attacked:
+    if body not in already_attacked:
         already_attacked.append(body)
-        body.take_damage()
+    if body.has_method("target"):
+        body.target()
+    if body.has_method("knockback_from"):
+        body.knockback_from(position)
 
 func _on_timeout() -> void:
     queue_free()
