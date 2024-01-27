@@ -9,25 +9,39 @@ extends CharacterBody2D
 @export var knockback_amount : float
 @export var friction : float = 0.1
 @export var move_epsilon : float = 1
+@export var time_between_shots = 0.33
 
 var target_manager : TargetManager
+var is_angry : bool
+var shoot_cooldown : float
+
+func knockback_from(pos : Vector2) -> void:
+    var direction = (position - pos).normalized()
+    velocity = direction * knockback_amount
 
 func _ready():
-	target_manager = get_tree().root.find_child(
-		"TargetManager",
-		true,
-		false
-	)
-	
-func knockback_from(pos : Vector2) -> void:
-	var direction = (position - pos).normalized()
-	velocity = direction * knockback_amount
-
+    target_manager = get_tree().root.find_child(
+        "TargetManager",
+        true,
+        false
+    )
+    is_angry = false
+    
 func target():
-	target_manager.add_target(self)
+    if not is_angry:
+        shoot_cooldown = time_between_shots
+    target_manager.add_target(self)
+
+func _process(delta):
+    tag_indicator.visible = is_angry
+    if is_angry:
+        shoot_cooldown -= delta
+        if(shoot_cooldown <= 0):
+            shoot_cooldown += time_between_shots
+            print("bang")
 
 func _physics_process(delta):
-	if velocity.length() > move_epsilon:
-		velocity = lerp(velocity, Vector2(0,0), clamp(friction*delta,0,1))
-	move_and_slide()
-	
+    if velocity.length() > move_epsilon:
+        velocity = lerp(velocity, Vector2(0,0), clamp(friction*delta,0,1))
+    move_and_slide()
+    

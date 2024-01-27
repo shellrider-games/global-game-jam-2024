@@ -14,4 +14,4 @@ func _process(delta):
 	for target in targets.keys():
 		targets[target] = max(targets[target] - delta, 0)
 	for target in targets.keys():
-		target.tag_indicator.visible = targets[target] > 0
+		target.is_angry = targets[target] > 0
