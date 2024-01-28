@@ -17,6 +17,7 @@ var is_angry : bool
 var shoot_cooldown : float
 var player : Player
 var health : int = 5
+var bonk_audio : AudioStreamPlayer
 
 func knockback_from(pos : Vector2) -> void:
     var direction = (position - pos).normalized()
@@ -47,9 +48,16 @@ func _ready():
         true,
         false
     )
+    bonk_audio = get_tree().root.find_child(
+        "BonkAudio",
+        true,
+        false
+    )
     is_angry = false
     
 func target():
+    if bonk_audio and not bonk_audio.playing:
+        bonk_audio.play(0)
     if not is_angry:
         shoot_cooldown = time_between_shots
     target_manager.add_target(self)

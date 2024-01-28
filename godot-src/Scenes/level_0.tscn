@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=9 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://cuh34jqcntpog" path="res://Scenes/enemy.tscn" id="1_58onc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_jvvbd"]
 [ext_resource type="PackedScene" uid="uid://kfcmwidkt3i7" path="res://Scenes/hammer.tscn" id="3_h5yrq"]
 [ext_resource type="PackedScene" uid="uid://i8sm4lm7bmsl" path="res://Scenes/InGameUI.tscn" id="7_i1dnr"]
+[ext_resource type="AudioStream" uid="uid://cafwk4cp5wbth" path="res://SFX/bonk.wav" id="8_s7s7b"]
 
 [node name="Level0" type="Node2D" node_paths=PackedStringArray("player", "hearts_display")]
 script = ExtResource("1_jvvbd")
@@ -47,3 +48,6 @@ position = Vector2(945, 544)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HeartsDisplay" parent="CanvasLayer" instance=ExtResource("7_i1dnr")]
+
+[node name="BonkAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_s7s7b")
