@@ -36,7 +36,7 @@ position = Vector2(1208, 559)
 leader = NodePath("../Player")
 
 [node name="Enemy" type="CharacterBody2D" parent="Characters" node_paths=PackedStringArray("tag_indicator", "bullet_spawn")]
-position = Vector2(475, 432)
+position = Vector2(474, 432)
 collision_layer = 3
 script = ExtResource("4_vjgdl")
 bullet_scene = ExtResource("5_ykufe")
