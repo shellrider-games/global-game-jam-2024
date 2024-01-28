@@ -30,12 +30,25 @@ grow_vertical = 2
 text = "YOU WIN!"
 label_settings = SubResource("LabelSettings_mbqem")
 
-[node name="Clown" type="Sprite2D" parent="."]
-position = Vector2(387, 551)
-scale = Vector2(0.785, 0.785)
-texture = ExtResource("1_r082t")
-
-[node name="Minion" type="Sprite2D" parent="."]
-position = Vector2(1529, 528)
-scale = Vector2(0.815, 0.815)
+[node name="Minion" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -874.0
+grow_horizontal = 0
+grow_vertical = 2
 texture = ExtResource("2_xykm6")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Clown" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 874.0
+grow_vertical = 2
+texture = ExtResource("1_r082t")
+expand_mode = 4
+stretch_mode = 4
