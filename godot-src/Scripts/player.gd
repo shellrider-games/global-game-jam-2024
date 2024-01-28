@@ -20,6 +20,9 @@ func level_up():
 	health += 1
 	max_health_changed.emit(max_health)
 	health_changed.emit(health)
+	
+	if(max_health >= 8):
+		get_tree().change_scene_to_file("res://Scenes/WinScreen.tscn")
 
 func bullet_hit():
 	oof_audio.play(0)

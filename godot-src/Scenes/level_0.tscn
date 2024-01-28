@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=29 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://ct3nbyrc6l8we" path="res://Scenes/illuminati_enemy.tscn" id="15_lanf5"]
 [ext_resource type="PackedScene" uid="uid://bv0hluognme7v" path="res://Scenes/illuminati_minion.tscn" id="16_emecj"]
 [ext_resource type="Texture2D" uid="uid://dc6qsjq25yrn0" path="res://Images/illuminati_follower.png" id="17_esbyp"]
-[ext_resource type="PackedScene" uid="uid://w5woxbkpur72" path="res://Scenes/tom_enemy.tscn" id="18_xwher"]
-[ext_resource type="PackedScene" uid="uid://wus8p6l7six5" path="res://Scenes/tom_minion.tscn" id="19_3ahw1"]
+[ext_resource type="PackedScene" path="res://Scenes/tom_enemy.tscn" id="18_xwher"]
+[ext_resource type="PackedScene" path="res://Scenes/tom_minion.tscn" id="19_3ahw1"]
 [ext_resource type="Texture2D" uid="uid://bs1bynpl0dopf" path="res://Images/tom_minion.png" id="20_5mego"]
 [ext_resource type="AudioStream" uid="uid://b2f4dsnuxdf31" path="res://Music/Shenanigans.mp3" id="20_tkjhk"]
 [ext_resource type="AudioStream" uid="uid://d0a8vt1ytasdj" path="res://SFX/laugh.mp3" id="21_xja31"]
