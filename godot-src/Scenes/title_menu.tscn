@@ -7,7 +7,7 @@
 font_size = 64
 font_color = Color(0, 0, 0, 1)
 
-[node name="TitleMenu" type="Control" node_paths=PackedStringArray("start_button", "controls_button")]
+[node name="TitleMenu" type="Control" node_paths=PackedStringArray("start_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,7 +16,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_q6l6e")
 start_button = NodePath("StartGameBtn")
-controls_button = NodePath("")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
