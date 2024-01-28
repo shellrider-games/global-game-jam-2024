@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://wus8p6l7six5"]
+
+[ext_resource type="Script" path="res://Scripts/minion.gd" id="1_b66yr"]
+[ext_resource type="PackedScene" uid="uid://creqw7wprhkww" path="res://Scenes/smile_bullet.tscn" id="2_7i37y"]
+[ext_resource type="Texture2D" uid="uid://bs1bynpl0dopf" path="res://Images/tom_minion.png" id="3_j6caq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5osf"]
+radius = 42.49
+height = 102.46
+
+[node name="Minion" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "bullet_spawn")]
+collision_layer = 5
+script = ExtResource("1_b66yr")
+speed = 30000.0
+max_distance_to_leader = 300.0
+min_distance_to_leader = 125.0
+epsilon = 10.0
+sprite = NodePath("Sprite")
+bullet_scene = ExtResource("2_7i37y")
+bullet_spawn = NodePath("BulletSpawn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("CapsuleShape2D_g5osf")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -41)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("3_j6caq")
+
+[node name="BulletSpawn" type="Node2D" parent="."]
+position = Vector2(29, -42)

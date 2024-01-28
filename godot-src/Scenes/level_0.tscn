@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=28 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
@@ -19,6 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://ct3nbyrc6l8we" path="res://Scenes/illuminati_enemy.tscn" id="15_lanf5"]
 [ext_resource type="PackedScene" uid="uid://bv0hluognme7v" path="res://Scenes/illuminati_minion.tscn" id="16_emecj"]
 [ext_resource type="Texture2D" uid="uid://dc6qsjq25yrn0" path="res://Images/illuminati_follower.png" id="17_esbyp"]
+[ext_resource type="PackedScene" uid="uid://w5woxbkpur72" path="res://Scenes/tom_enemy.tscn" id="18_xwher"]
+[ext_resource type="PackedScene" uid="uid://wus8p6l7six5" path="res://Scenes/tom_minion.tscn" id="19_3ahw1"]
+[ext_resource type="Texture2D" uid="uid://bs1bynpl0dopf" path="res://Images/tom_minion.png" id="20_5mego"]
 [ext_resource type="AudioStream" uid="uid://b2f4dsnuxdf31" path="res://Music/Shenanigans.mp3" id="20_tkjhk"]
 [ext_resource type="AudioStream" uid="uid://d0a8vt1ytasdj" path="res://SFX/laugh.mp3" id="21_xja31"]
 [ext_resource type="AudioStream" uid="uid://cpyt2wlu1bwqu" path="res://SFX/shooting.wav" id="22_x2qfj"]
@@ -52,7 +55,7 @@ position = Vector2(1208, 559)
 leader = NodePath("../Player")
 
 [node name="Enemy" type="CharacterBody2D" parent="Characters" node_paths=PackedStringArray("tag_indicator", "bullet_spawn")]
-position = Vector2(474, 432)
+position = Vector2(95, -43)
 collision_layer = 3
 script = ExtResource("4_vjgdl")
 bullet_scene = ExtResource("5_ykufe")
@@ -92,16 +95,21 @@ follow_target = NodePath("../Player")
 offset = Vector2(-65, -17)
 
 [node name="Enemy_Mickey" parent="Characters" instance=ExtResource("13_ldocu")]
-position = Vector2(746, 237)
+position = Vector2(2119, 231)
 
 [node name="Enemy_DaVinki" parent="Characters" instance=ExtResource("12_lhqye")]
-position = Vector2(1439, 197)
+position = Vector2(-332, 1017)
 after_conversion_texture = ExtResource("14_vntdv")
 
 [node name="Enemy_Illuminati" parent="Characters" instance=ExtResource("15_lanf5")]
-position = Vector2(668, 860)
+position = Vector2(1174, 76)
 after_conversion_scene = ExtResource("16_emecj")
 after_conversion_texture = ExtResource("17_esbyp")
+
+[node name="Enemy_Tom" parent="Characters" instance=ExtResource("18_xwher")]
+position = Vector2(2121, 1420)
+after_conversion_scene = ExtResource("19_3ahw1")
+after_conversion_texture = ExtResource("20_5mego")
 
 [node name="Bullets" type="Node2D" parent="."]
 
