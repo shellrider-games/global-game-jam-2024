@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvdvd76rrrmsy"]
+
+[ext_resource type="Script" path="res://Scripts/minion.gd" id="1_5uuex"]
+[ext_resource type="PackedScene" uid="uid://creqw7wprhkww" path="res://Scenes/smile_bullet.tscn" id="2_s5uh6"]
+[ext_resource type="Texture2D" uid="uid://dk3hutvxfi0fx" path="res://Images/mickey_follower.png" id="3_7c3ru"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d085j"]
+radius = 45.0
+height = 110.0
+
+[node name="Minion" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "bullet_spawn")]
+collision_layer = 5
+script = ExtResource("1_5uuex")
+speed = 30000.0
+max_distance_to_leader = 300.0
+min_distance_to_leader = 125.0
+epsilon = 10.0
+sprite = NodePath("Sprite")
+bullet_scene = ExtResource("2_s5uh6")
+bullet_spawn = NodePath("BulletSpawn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-13, 12)
+shape = SubResource("CapsuleShape2D_d085j")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -41)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("3_7c3ru")
+flip_h = true
+
+[node name="BulletSpawn" type="Node2D" parent="."]
+position = Vector2(59, -23)

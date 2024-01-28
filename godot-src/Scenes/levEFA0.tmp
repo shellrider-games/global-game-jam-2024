@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=15 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
@@ -12,10 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://d2vm4lqvsupg5" path="res://Images/enemy.png" id="7_o81vs"]
 [ext_resource type="AudioStream" uid="uid://cafwk4cp5wbth" path="res://SFX/bonk.wav" id="8_s7s7b"]
 [ext_resource type="PackedScene" uid="uid://4027gahk8wna" path="res://Scenes/tag_indicator.tscn" id="8_v7jtq"]
-[ext_resource type="PackedScene" uid="uid://cerhwvvbds4if" path="res://Scenes/davinki_enemy.tscn" id="12_lhqye"]
-[ext_resource type="PackedScene" uid="uid://ddwl7qmrbwul4" path="res://Scenes/davinki_minion.tscn" id="13_82vjw"]
 [ext_resource type="PackedScene" uid="uid://bnoudmu5bkikw" path="res://Scenes/enemy_micky.tscn" id="13_ldocu"]
-[ext_resource type="Texture2D" uid="uid://3mgl0uebwrmp" path="res://Images/davinki_follower.png" id="14_vntdv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
 radius = 35.0
@@ -80,11 +77,6 @@ offset = Vector2(-65, -17)
 
 [node name="Enemy2" parent="Characters" instance=ExtResource("13_ldocu")]
 position = Vector2(746, 237)
-
-[node name="Enemy3" parent="Characters" instance=ExtResource("12_lhqye")]
-position = Vector2(1439, 197)
-after_conversion_scene = ExtResource("13_82vjw")
-after_conversion_texture = ExtResource("14_vntdv")
 
 [node name="Bullets" type="Node2D" parent="."]
 
