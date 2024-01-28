@@ -10,14 +10,18 @@ signal health_changed(amount)
 @onready var max_health = 3
 @onready var health = max_health
 
+func level_up():
+	max_health += 1
+	health += 1
+	max_health_changed.emit(max_health)
+	health_changed.emit(health)
+
 func bullet_hit():
-	print("Ouch!!!!")
 	health -= 1
 	health_changed.emit(health)
 	if(health <= 0):
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 	
-
 func _update_animation():
 	var direction = "_down"
 	

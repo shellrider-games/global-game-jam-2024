@@ -26,7 +26,8 @@ func _convert_to_minion():
     var noob = after_conversion_scene.instantiate()
     noob.set_deferred("position", position)
     noob.set_deferred("leader", player)
-    add_sibling(noob)
+    call_deferred("add_sibling", noob)
+    player.level_up()
     target_manager.remove_target(self)
     queue_free()
 
