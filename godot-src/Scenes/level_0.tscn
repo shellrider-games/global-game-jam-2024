@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=26 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
@@ -22,6 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://b2f4dsnuxdf31" path="res://Music/Shenanigans.mp3" id="20_tkjhk"]
 [ext_resource type="AudioStream" uid="uid://d0a8vt1ytasdj" path="res://SFX/laugh.mp3" id="21_xja31"]
 [ext_resource type="AudioStream" uid="uid://cpyt2wlu1bwqu" path="res://SFX/shooting.wav" id="22_x2qfj"]
+[ext_resource type="AudioStream" uid="uid://b1lwnp30ljyok" path="res://SFX/oof.wav" id="23_d42vw"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
 radius = 35.0
@@ -145,3 +146,6 @@ stream = ExtResource("21_xja31")
 [node name="ShootAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_x2qfj")
 max_polyphony = 5
+
+[node name="OofAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("23_d42vw")
