@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=22 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://cafwk4cp5wbth" path="res://SFX/bonk.wav" id="8_s7s7b"]
 [ext_resource type="PackedScene" uid="uid://4027gahk8wna" path="res://Scenes/tag_indicator.tscn" id="8_v7jtq"]
 [ext_resource type="PackedScene" uid="uid://cerhwvvbds4if" path="res://Scenes/davinki_enemy.tscn" id="12_lhqye"]
-[ext_resource type="PackedScene" uid="uid://ddwl7qmrbwul4" path="res://Scenes/davinki_minion.tscn" id="13_82vjw"]
 [ext_resource type="PackedScene" uid="uid://bnoudmu5bkikw" path="res://Scenes/enemy_micky.tscn" id="13_ldocu"]
 [ext_resource type="Texture2D" uid="uid://3mgl0uebwrmp" path="res://Images/davinki_follower.png" id="14_vntdv"]
 [ext_resource type="PackedScene" uid="uid://ct3nbyrc6l8we" path="res://Scenes/illuminati_enemy.tscn" id="15_lanf5"]
@@ -94,7 +93,6 @@ position = Vector2(746, 237)
 
 [node name="Enemy_DaVinki" parent="Characters" instance=ExtResource("12_lhqye")]
 position = Vector2(1439, 197)
-after_conversion_scene = ExtResource("13_82vjw")
 after_conversion_texture = ExtResource("14_vntdv")
 
 [node name="Enemy_Illuminati" parent="Characters" instance=ExtResource("15_lanf5")]
