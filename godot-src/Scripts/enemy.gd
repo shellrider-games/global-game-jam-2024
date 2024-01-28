@@ -4,6 +4,7 @@ extends CharacterBody2D
 
 @export var bullet_scene : Resource
 @export var after_conversion_scene : Resource
+@export var after_conversion_texture : Texture2D
 @export var tag_indicator : Node2D
 @export var bullet_spawn : Node2D
 
@@ -27,6 +28,7 @@ func _convert_to_minion():
     var noob = after_conversion_scene.instantiate()
     noob.set_deferred("position", position)
     noob.set_deferred("leader", player)
+    noob.sprite.set_deferred("texture", after_conversion_texture)
     call_deferred("add_sibling", noob)
     player.level_up()
     target_manager.remove_target(self)

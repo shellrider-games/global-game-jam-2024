@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuh34jqcntpog"]
+[gd_scene load_steps=8 format=3 uid="uid://cuh34jqcntpog"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_kph8y"]
 [ext_resource type="Texture2D" uid="uid://d2vm4lqvsupg5" path="res://Images/enemy.png" id="1_mysvk"]
 [ext_resource type="PackedScene" uid="uid://ch6e07x20jya" path="res://Scenes/cry_bullet.tscn" id="2_2bt4n"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="2_wwwlh"]
+[ext_resource type="Texture2D" uid="uid://b5tauje8lpgdu" path="res://Images/minion.png" id="4_janp6"]
 [ext_resource type="PackedScene" uid="uid://4027gahk8wna" path="res://Scenes/tag_indicator.tscn" id="4_lviyu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
@@ -15,6 +16,7 @@ collision_layer = 3
 script = ExtResource("1_kph8y")
 bullet_scene = ExtResource("2_2bt4n")
 after_conversion_scene = ExtResource("2_wwwlh")
+after_conversion_texture = ExtResource("4_janp6")
 tag_indicator = NodePath("TagIndicator")
 bullet_spawn = NodePath("BulletSpawn")
 knockback_amount = 1500.0
