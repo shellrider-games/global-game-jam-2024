@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=21 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://ddwl7qmrbwul4" path="res://Scenes/davinki_minion.tscn" id="13_82vjw"]
 [ext_resource type="PackedScene" uid="uid://bnoudmu5bkikw" path="res://Scenes/enemy_micky.tscn" id="13_ldocu"]
 [ext_resource type="Texture2D" uid="uid://3mgl0uebwrmp" path="res://Images/davinki_follower.png" id="14_vntdv"]
+[ext_resource type="PackedScene" uid="uid://ct3nbyrc6l8we" path="res://Scenes/illuminati_enemy.tscn" id="15_lanf5"]
+[ext_resource type="PackedScene" uid="uid://bv0hluognme7v" path="res://Scenes/illuminati_minion.tscn" id="16_emecj"]
+[ext_resource type="Texture2D" uid="uid://dc6qsjq25yrn0" path="res://Images/illuminati_follower.png" id="17_esbyp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
 radius = 35.0
@@ -39,7 +42,7 @@ position = Vector2(1208, 559)
 leader = NodePath("../Player")
 
 [node name="Enemy" type="CharacterBody2D" parent="Characters" node_paths=PackedStringArray("tag_indicator", "bullet_spawn")]
-position = Vector2(475, 432)
+position = Vector2(439, 438)
 collision_layer = 3
 script = ExtResource("4_vjgdl")
 bullet_scene = ExtResource("5_ykufe")
@@ -78,13 +81,18 @@ position = Vector2(475, 669)
 follow_target = NodePath("../Player")
 offset = Vector2(-65, -17)
 
-[node name="Enemy2" parent="Characters" instance=ExtResource("13_ldocu")]
+[node name="Enemy_Mickey" parent="Characters" instance=ExtResource("13_ldocu")]
 position = Vector2(746, 237)
 
-[node name="Enemy3" parent="Characters" instance=ExtResource("12_lhqye")]
+[node name="Enemy_DaVinki" parent="Characters" instance=ExtResource("12_lhqye")]
 position = Vector2(1439, 197)
 after_conversion_scene = ExtResource("13_82vjw")
 after_conversion_texture = ExtResource("14_vntdv")
+
+[node name="Enemy_Illuminati" parent="Characters" instance=ExtResource("15_lanf5")]
+position = Vector2(668, 860)
+after_conversion_scene = ExtResource("16_emecj")
+after_conversion_texture = ExtResource("17_esbyp")
 
 [node name="Bullets" type="Node2D" parent="."]
 
