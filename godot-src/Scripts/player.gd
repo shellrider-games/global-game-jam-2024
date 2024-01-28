@@ -9,6 +9,11 @@ signal health_changed(amount)
 @onready var animations = $AnimationPlayer
 @onready var max_health = 3
 @onready var health = max_health
+@onready var oof_audio : AudioStreamPlayer = get_tree().root.find_child(
+	"OofAudio",
+	true,
+	false
+)
 
 func level_up():
 	max_health += 1
@@ -17,6 +22,7 @@ func level_up():
 	health_changed.emit(health)
 
 func bullet_hit():
+	oof_audio.play(0)
 	health -= 1
 	health_changed.emit(health)
 	if(health <= 0):
