@@ -11,7 +11,8 @@ func _ready():
 	pass # Replace with function body.
 
 func _update_position():
-	var mouse_pos = get_viewport().get_mouse_position()
+	var mouse_pos = get_viewport().get_mouse_position() \
+		- 0.5 * get_viewport().size + follow_target.position
 	var hammer_dir = (follow_target.position - mouse_pos).normalized()
 	position = follow_target.position +  Vector2(0,offset.y) + \
 		hammer_dir * offset.x
