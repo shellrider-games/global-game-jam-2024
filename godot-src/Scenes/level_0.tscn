@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=8 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://cuh34jqcntpog" path="res://Scenes/enemy.tscn" id="1_58onc"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
 [ext_resource type="PackedScene" uid="uid://drai4uf0cijc0" path="res://Scenes/player.tscn" id="1_d3vag"]
+[ext_resource type="Script" path="res://Scripts/level.gd" id="1_jvvbd"]
 [ext_resource type="PackedScene" uid="uid://kfcmwidkt3i7" path="res://Scenes/hammer.tscn" id="3_h5yrq"]
+[ext_resource type="PackedScene" uid="uid://i8sm4lm7bmsl" path="res://Scenes/InGameUI.tscn" id="7_i1dnr"]
 
-[node name="Level0" type="Node2D"]
+[node name="Level0" type="Node2D" node_paths=PackedStringArray("player", "hearts_display")]
+script = ExtResource("1_jvvbd")
+player = NodePath("Characters/Player")
+hearts_display = NodePath("CanvasLayer/HeartsDisplay")
 
 [node name="TargetManager" type="Node2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
@@ -38,3 +43,7 @@ offset = Vector2(-65, -17)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(945, 544)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsDisplay" parent="CanvasLayer" instance=ExtResource("7_i1dnr")]

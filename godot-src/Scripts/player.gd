@@ -2,13 +2,18 @@ extends CharacterBody2D
 
 class_name Player
 
+signal max_health_changed(amount)
+signal health_changed(amount)
+
 @export var speed : float = 30000
 @onready var animations = $AnimationPlayer
-@onready var health = 3
+@onready var max_health = 3
+@onready var health = max_health
 
 func bullet_hit():
 	print("Ouch!!!!")
 	health -= 1
+	health_changed.emit(health)
 	if(health <= 0):
 		get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
 	
