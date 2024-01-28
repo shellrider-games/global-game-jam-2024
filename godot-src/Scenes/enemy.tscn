@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://b5tauje8lpgdu" path="res://Images/minion.png" id="4_janp6"]
 [ext_resource type="PackedScene" uid="uid://4027gahk8wna" path="res://Scenes/tag_indicator.tscn" id="4_lviyu"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
-radius = 35.0
-height = 80.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_41jsk"]
+radius = 49.95
+height = 119.82
 
 [node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("tag_indicator", "bullet_spawn")]
 collision_layer = 3
@@ -24,7 +24,7 @@ friction = 5.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.08165e-12, 2.08165e-12)
-shape = SubResource("CapsuleShape2D_1xk3u")
+shape = SubResource("CapsuleShape2D_41jsk")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(2.08165e-12, -41)
