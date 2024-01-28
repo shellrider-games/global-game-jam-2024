@@ -38,7 +38,7 @@ func _nearest_target():
 			nearest_target = target
 			continue
 		if (target.position - position).length() \
-			< (nearest_target.position - position):
+			< (nearest_target.position - position).length():
 			nearest_target = target
 	return nearest_target
 
