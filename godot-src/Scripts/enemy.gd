@@ -19,12 +19,15 @@ var shoot_cooldown : float
 var player : Player
 var health : int = 5
 var bonk_audio : AudioStreamPlayer
+var laugh_audio : AudioStreamPlayer
+var shoot_audio : AudioStreamPlayer
 
 func knockback_from(pos : Vector2) -> void:
     var direction = (position - pos).normalized()
     velocity = direction * knockback_amount
 
 func _convert_to_minion():
+    laugh_audio.play(0)
     var noob = after_conversion_scene.instantiate()
     noob.set_deferred("position", position)
     noob.set_deferred("leader", player)
@@ -55,6 +58,16 @@ func _ready():
         true,
         false
     )
+    laugh_audio = get_tree().root.find_child(
+        "LaughAudio",
+        true,
+        false
+    )
+    shoot_audio = get_tree().root.find_child(
+        "ShootAudio",
+        true,
+        false
+    )
     is_angry = false
     
 func target():
@@ -65,6 +78,7 @@ func target():
     target_manager.add_target(self)
 
 func _spawn_bullet():
+    shoot_audio.play(0)
     var bullets = get_tree().root.find_child(
         "Bullets",
         true,

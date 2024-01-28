@@ -15,11 +15,13 @@ class_name Minion
 
 @onready var shoot_cooldown = time_between_shots
 var target_manager : TargetManager
+var shoot_audio : AudioStreamPlayer
 
 func bullet_hit():
 	pass
 
 func _spawn_bullet(target):
+	shoot_audio.play(0)
 	var bullets = get_tree().root.find_child(
 		"Bullets",
 		true,
@@ -48,6 +50,11 @@ func _ready():
 		true,
 		false
 	)
+	shoot_audio = get_tree().root.find_child(
+        "ShootAudio",
+        true,
+        false
+    )
 
 func _process(delta):
 	if leader and sprite:
