@@ -1,10 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cp05pn5jtgmm0"]
+[gd_scene load_steps=2 format=3 uid="uid://cp05pn5jtgmm0"]
 
-[ext_resource type="Texture2D" uid="uid://dh5xmcl5pavlx" path="res://Images/clown.png" id="1_r082t"]
-[ext_resource type="Texture2D" uid="uid://b5tauje8lpgdu" path="res://Images/minion.png" id="2_xykm6"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_mbqem"]
-font_size = 128
+[ext_resource type="Texture2D" uid="uid://be5sgxla5l0b3" path="res://Images/win_screen.png" id="1_ddh7e"]
 
 [node name="WinScreen" type="Control"]
 layout_mode = 3
@@ -14,41 +10,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -151.0
-offset_top = -44.0
-offset_right = 151.0
-offset_bottom = 44.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "YOU WIN!"
-label_settings = SubResource("LabelSettings_mbqem")
-
-[node name="Minion" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -874.0
-grow_horizontal = 0
+offset_left = 2.0
+offset_right = 2.0
+grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_xykm6")
-expand_mode = 4
-stretch_mode = 4
-
-[node name="Clown" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 874.0
-grow_vertical = 2
-texture = ExtResource("1_r082t")
-expand_mode = 4
-stretch_mode = 4
+texture = ExtResource("1_ddh7e")
