@@ -4,9 +4,14 @@ class_name Player
 
 @export var speed : float = 30000
 @onready var animations = $AnimationPlayer
+@onready var health = 3
 
 func bullet_hit():
 	print("Ouch!!!!")
+	health -= 1
+	if(health <= 0):
+		print("Game Lost")
+	
 
 func _update_animation():
 	var direction = "_down"
