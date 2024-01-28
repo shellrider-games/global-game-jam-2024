@@ -41,7 +41,7 @@ offset_top = 1.0
 offset_right = 335.0
 offset_bottom = 89.0
 grow_horizontal = 2
-text = "Game Title goes here!"
+text = "Join The Smiles!"
 label_settings = SubResource("LabelSettings_tgp3x")
 horizontal_alignment = 1
 
