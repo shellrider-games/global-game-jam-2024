@@ -31,7 +31,8 @@ text = "YOU WIN!"
 label_settings = SubResource("LabelSettings_mbqem")
 
 [node name="Clown" type="Sprite2D" parent="."]
-position = Vector2(391, 598)
+position = Vector2(387, 551)
+scale = Vector2(0.785, 0.785)
 texture = ExtResource("1_r082t")
 
 [node name="Minion" type="Sprite2D" parent="."]
