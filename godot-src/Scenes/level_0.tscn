@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://ct3nbyrc6l8we" path="res://Scenes/illuminati_enemy.tscn" id="15_lanf5"]
 [ext_resource type="PackedScene" uid="uid://bv0hluognme7v" path="res://Scenes/illuminati_minion.tscn" id="16_emecj"]
 [ext_resource type="Texture2D" uid="uid://dc6qsjq25yrn0" path="res://Images/illuminati_follower.png" id="17_esbyp"]
+[ext_resource type="AudioStream" uid="uid://b2f4dsnuxdf31" path="res://Music/Shenanigans.mp3" id="20_tkjhk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
 radius = 35.0
@@ -105,13 +106,6 @@ after_conversion_texture = ExtResource("17_esbyp")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(945, 544)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HeartsDisplay" parent="CanvasLayer" instance=ExtResource("7_i1dnr")]
-
-[node name="BonkAudio" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("8_s7s7b")
-
 [node name="Barrier" type="StaticBody2D" parent="."]
 position = Vector2(-536, 433)
 
@@ -131,3 +125,14 @@ shape = SubResource("RectangleShape2D_cqk6o")
 position = Vector2(1625, 1147)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_cqk6o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HeartsDisplay" parent="CanvasLayer" instance=ExtResource("7_i1dnr")]
+
+[node name="BonkAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_s7s7b")
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_tkjhk")
+autoplay = true
