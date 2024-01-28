@@ -1,13 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=15 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
-[ext_resource type="PackedScene" uid="uid://cuh34jqcntpog" path="res://Scenes/enemy.tscn" id="1_58onc"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
 [ext_resource type="PackedScene" uid="uid://drai4uf0cijc0" path="res://Scenes/player.tscn" id="1_d3vag"]
 [ext_resource type="Script" path="res://Scripts/level.gd" id="1_jvvbd"]
 [ext_resource type="PackedScene" uid="uid://kfcmwidkt3i7" path="res://Scenes/hammer.tscn" id="3_h5yrq"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="4_vjgdl"]
+[ext_resource type="PackedScene" uid="uid://ch6e07x20jya" path="res://Scenes/cry_bullet.tscn" id="5_ykufe"]
+[ext_resource type="Texture2D" uid="uid://b5tauje8lpgdu" path="res://Images/minion.png" id="6_l5gue"]
 [ext_resource type="PackedScene" uid="uid://i8sm4lm7bmsl" path="res://Scenes/InGameUI.tscn" id="7_i1dnr"]
+[ext_resource type="Texture2D" uid="uid://d2vm4lqvsupg5" path="res://Images/enemy.png" id="7_o81vs"]
 [ext_resource type="AudioStream" uid="uid://cafwk4cp5wbth" path="res://SFX/bonk.wav" id="8_s7s7b"]
+[ext_resource type="PackedScene" uid="uid://4027gahk8wna" path="res://Scenes/tag_indicator.tscn" id="8_v7jtq"]
+[ext_resource type="PackedScene" uid="uid://bnoudmu5bkikw" path="res://Scenes/enemy_micky.tscn" id="13_ldocu"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
+radius = 35.0
+height = 80.0
 
 [node name="Level0" type="Node2D" node_paths=PackedStringArray("player", "hearts_display")]
 script = ExtResource("1_jvvbd")
@@ -26,8 +35,34 @@ y_sort_enabled = true
 position = Vector2(1208, 559)
 leader = NodePath("../Player")
 
-[node name="Enemy" parent="Characters" instance=ExtResource("1_58onc")]
+[node name="Enemy" type="CharacterBody2D" parent="Characters" node_paths=PackedStringArray("tag_indicator", "bullet_spawn")]
 position = Vector2(475, 432)
+collision_layer = 3
+script = ExtResource("4_vjgdl")
+bullet_scene = ExtResource("5_ykufe")
+after_conversion_scene = ExtResource("1_aye6v")
+after_conversion_texture = ExtResource("6_l5gue")
+tag_indicator = NodePath("TagIndicator")
+bullet_spawn = NodePath("BulletSpawn")
+knockback_amount = 1500.0
+friction = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Characters/Enemy"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("CapsuleShape2D_1xk3u")
+
+[node name="Sprite" type="Sprite2D" parent="Characters/Enemy"]
+position = Vector2(2.08165e-12, -41)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("7_o81vs")
+
+[node name="TagIndicator" parent="Characters/Enemy" instance=ExtResource("8_v7jtq")]
+visible = false
+z_index = 1
+position = Vector2(0, -130)
+
+[node name="BulletSpawn" type="Node2D" parent="Characters/Enemy"]
+position = Vector2(48, -39)
 
 [node name="Player" parent="Characters" instance=ExtResource("1_d3vag")]
 position = Vector2(945, 544)
@@ -51,3 +86,6 @@ position = Vector2(945, 544)
 
 [node name="BonkAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_s7s7b")
+
+[node name="Enemy" parent="." instance=ExtResource("13_ldocu")]
+position = Vector2(799, 319)

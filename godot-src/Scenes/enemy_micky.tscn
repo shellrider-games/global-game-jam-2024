@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnoudmu5bkikw"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_2bq82"]
+[ext_resource type="PackedScene" uid="uid://ch6e07x20jya" path="res://Scenes/cry_bullet.tscn" id="2_oyws6"]
+[ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="3_kg5g4"]
+[ext_resource type="Texture2D" uid="uid://dk3hutvxfi0fx" path="res://Images/mickey_follower.png" id="4_4y8rx"]
+[ext_resource type="Texture2D" uid="uid://cfv4toclqwtog" path="res://Images/mickey_enemy.png" id="5_0iuql"]
+[ext_resource type="PackedScene" uid="uid://4027gahk8wna" path="res://Scenes/tag_indicator.tscn" id="6_okro0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1xk3u"]
+radius = 35.0
+height = 80.0
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("tag_indicator", "bullet_spawn")]
+collision_layer = 3
+script = ExtResource("1_2bq82")
+bullet_scene = ExtResource("2_oyws6")
+after_conversion_scene = ExtResource("3_kg5g4")
+after_conversion_texture = ExtResource("4_4y8rx")
+tag_indicator = NodePath("TagIndicator")
+bullet_spawn = NodePath("BulletSpawn")
+knockback_amount = 1500.0
+friction = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, 2.08165e-12)
+shape = SubResource("CapsuleShape2D_1xk3u")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(2.08165e-12, -41)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("5_0iuql")
+
+[node name="TagIndicator" parent="." instance=ExtResource("6_okro0")]
+visible = false
+z_index = 1
+position = Vector2(0, -130)
+
+[node name="BulletSpawn" type="Node2D" parent="."]
+position = Vector2(48, -39)
