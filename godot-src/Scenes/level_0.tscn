@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bd2nwu315k2ta"]
+[gd_scene load_steps=23 format=3 uid="uid://bd2nwu315k2ta"]
 
 [ext_resource type="Script" path="res://Scripts/target_manager.gd" id="1_7r70x"]
 [ext_resource type="PackedScene" uid="uid://c4v12qdlcbem5" path="res://Scenes/minion.tscn" id="1_aye6v"]
